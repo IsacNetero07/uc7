@@ -1,0 +1,15 @@
+CHESS UP — ATIVIDADES DE HTML SEMÂNTICO
+
+Arquivos:
+- index.html: Home BOSS com header, nav, main, 3 sections e footer.
+- sobre.html: página Sobre a equipe com HTML semântico.
+- avatar.jpg: imagem usada na página Sobre a equipe.
+
+Como testar:
+1. Extraia todos os arquivos para a mesma pasta.
+2. Abra index.html no navegador (ou use Live Server no VS Code).
+3. Para testar a página Sobre a equipe, abra sobre.html.
+4. No Chrome, abra DevTools com F12, vá à aba Lighthouse, marque Accessibility e execute a auditoria.
+
+O projeto foi feito sem CSS, conforme a atividade.
+A nota do Lighthouse deve ser confirmada no seu navegador; ela pode variar conforme o ambiente e a versão das ferramentas.
