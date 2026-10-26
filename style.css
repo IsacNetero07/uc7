@@ -1,0 +1,46 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: #343A40;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.links {
+    display: flex;
+    gap: 24px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.links a:hover {
+    color: #28C76F;
+}
+
+.botao-entrar {
+    background: #28C76F;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+}
+
+.botao-entrar:hover {
+    background: #20A85A;
+}
