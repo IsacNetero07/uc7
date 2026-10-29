@@ -1173,3 +1173,45 @@ button:disabled{opacity:.48;cursor:not-allowed}
     .stat-grid{gap:5px}
     .stat-card{padding-inline:6px}
 }
+
+
+/* MENU RESPONSIVO SEM JAVASCRIPT */
+.menu-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+.menu-overlay {
+    display: none;
+}
+.menu-checkbox:focus-visible + .menu-toggle {
+    outline: 3px solid var(--blue);
+    outline-offset: 4px;
+}
+.square {
+    cursor: default;
+}
+@media screen and (max-width: 680px) {
+    .menu-checkbox:checked ~ .menu-overlay {
+        display: block;
+    }
+    .menu-checkbox:checked ~ .nav-links {
+        transform: translateX(0);
+        visibility: visible;
+    }
+    .menu-checkbox:checked + .menu-toggle span:first-child {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .menu-checkbox:checked + .menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-checkbox:checked + .menu-toggle span:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
