@@ -17,17 +17,9 @@
                 <img src="logo-chessup.png" alt="Logo do Chess Up">
             </a>
 
-            <button class="menu-toggle"
-                    type="button"
-                    aria-label="Abrir menu"
-                    aria-expanded="false"
-                    aria-controls="nav-links">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="menu-overlay" hidden></div>
+            <input class="menu-checkbox" type="checkbox" id="menu-checkbox" aria-label="Abrir menu de navegação">
+            <label class="menu-toggle" for="menu-checkbox" aria-hidden="true"><span></span><span></span><span></span></label>
+            <label class="menu-overlay" for="menu-checkbox" aria-label="Fechar menu"></label>
 
             <div class="nav-links" id="nav-links">
                 <a class="menu-brand" href="home.html" aria-label="Chess Up - Início">
