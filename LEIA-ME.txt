@@ -1,31 +1,27 @@
 CHESS UP — PROJETO UC7
 
+O Chess Up nesta versão é uma tela demonstrativa estática feita com HTML e CSS, sem JavaScript.
+
 Arquivos principais:
 - index.html: redireciona para home.html quando o site é aberto pela raiz.
-- home.html: página inicial, tabuleiro, partidas, desafios e aprendizado.
-- sobre.html: página sobre o desenvolvedor.
-- style.css: identidade visual e layout responsivo.
-- jogo.js: regras da partida, cronômetros, histórico local e quiz.
+- home.html: página inicial, tabuleiro ilustrativo, cartões de partidas, desafios e aprendizado.
+- sobre.html: página sobre o desenvolvedor, com o mesmo menu responsivo.
+- style.css: identidade visual, menu responsivo e layout para diferentes telas.
 - logo-chessup.png: logo do projeto.
 - avatar.jpg: avatar usado na página Sobre mim.
 
-Funcionalidades:
-- Partida local para duas pessoas no mesmo dispositivo.
-- Modo contra computador iniciante com respostas simples.
-- Modos Rápida (10 minutos), Blitz (5 minutos) e Bullet (1 minuto).
-- Validação de movimentos, promoção automática a dama, xeque-mate e empates.
-- Desfazer jogada, virar tabuleiro, desistir e exportar movimentos no formato PGN.
-- Histórico de partidas e contadores salvos no armazenamento local do navegador.
-- Quiz sobre regras e movimentos de xadrez.
+A tela demonstra:
+- Aparência de uma área de jogo e um tabuleiro de xadrez.
+- Cards para os modos Rápida, Blitz e Bullet.
+- Exemplo visual de histórico de partidas e estatísticas.
+- Cartões de desafios e conteúdo introdutório sobre as peças.
+- Layout responsivo e menu móvel que abre/fecha com HTML e CSS.
 
-Observações:
-- O jogo não oferece partidas online nem contas de usuário.
-- O modo Computador é uma estratégia simples de iniciante, não um motor profissional.
-- O mecanismo chess.js é carregado por CDN; para jogar, o navegador precisa conseguir acessar essa biblioteca pela internet.
+Observação:
+Todos os relógios, movimentos, estatísticas e resultados são ilustrativos. Esta versão não executa partidas, não valida movimentos, não salva resultados, não oferece partidas online e não joga contra o computador.
 
 Como testar:
-1. Abra o projeto no VS Code com Live Server ou acesse pelo GitHub Pages.
-2. Escolha o tempo e o adversário.
-3. Selecione uma peça e depois uma casa destacada para movimentá-la.
-4. Termine uma partida para conferir o histórico.
-5. Teste os desafios, a exportação PGN e o menu em uma tela estreita.
+1. Abra home.html com o Live Server ou acesse o site publicado no GitHub Pages.
+2. Navegue pelas áreas usando os links do menu.
+3. Redimensione o navegador para verificar a responsividade.
+4. No celular, toque no menu para abrir ou fechar a navegação.
