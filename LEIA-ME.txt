@@ -1,15 +1,31 @@
-CHESS UP — ATIVIDADES DE HTML SEMÂNTICO
+CHESS UP — PROJETO UC7
 
-Arquivos:
-- index.html: Home BOSS com header, nav, main, 3 sections e footer.
-- sobre.html: página Sobre a equipe com HTML semântico.
-- avatar.jpg: imagem usada na página Sobre a equipe.
+Arquivos principais:
+- index.html: redireciona para home.html quando o site é aberto pela raiz.
+- home.html: página inicial, tabuleiro, partidas, desafios e aprendizado.
+- sobre.html: página sobre o desenvolvedor.
+- style.css: identidade visual e layout responsivo.
+- jogo.js: regras da partida, cronômetros, histórico local e quiz.
+- logo-chessup.png: logo do projeto.
+- avatar.jpg: avatar usado na página Sobre mim.
+
+Funcionalidades:
+- Partida local para duas pessoas no mesmo dispositivo.
+- Modo contra computador iniciante com respostas simples.
+- Modos Rápida (10 minutos), Blitz (5 minutos) e Bullet (1 minuto).
+- Validação de movimentos, promoção automática a dama, xeque-mate e empates.
+- Desfazer jogada, virar tabuleiro, desistir e exportar movimentos no formato PGN.
+- Histórico de partidas e contadores salvos no armazenamento local do navegador.
+- Quiz sobre regras e movimentos de xadrez.
+
+Observações:
+- O jogo não oferece partidas online nem contas de usuário.
+- O modo Computador é uma estratégia simples de iniciante, não um motor profissional.
+- O mecanismo chess.js é carregado por CDN; para jogar, o navegador precisa conseguir acessar essa biblioteca pela internet.
 
 Como testar:
-1. Extraia todos os arquivos para a mesma pasta.
-2. Abra index.html no navegador (ou use Live Server no VS Code).
-3. Para testar a página Sobre a equipe, abra sobre.html.
-4. No Chrome, abra DevTools com F12, vá à aba Lighthouse, marque Accessibility e execute a auditoria.
-
-O projeto foi feito sem CSS, conforme a atividade.
-A nota do Lighthouse deve ser confirmada no seu navegador; ela pode variar conforme o ambiente e a versão das ferramentas.
+1. Abra o projeto no VS Code com Live Server ou acesse pelo GitHub Pages.
+2. Escolha o tempo e o adversário.
+3. Selecione uma peça e depois uma casa destacada para movimentá-la.
+4. Termine uma partida para conferir o histórico.
+5. Teste os desafios, a exportação PGN e o menu em uma tela estreita.
