@@ -266,6 +266,10 @@
             finishMatch("d", "Afogamento");
             return true;
         }
+        if (typeof chess.in_threefold_repetition === "function" && chess.in_threefold_repetition()) {
+            finishMatch("d", "Repetição tripla");
+            return true;
+        }
         if (chess.in_draw()) {
             finishMatch("d", "Empate pelas regras do xadrez");
             return true;
