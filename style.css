@@ -38,12 +38,17 @@
 }
 
 html {
+    max-width: 100%;
+    overflow-x: clip;
     scroll-behavior: smooth;
     scroll-padding-top: 24px;
 }
 
 body {
     width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    overflow-wrap: break-word;
     margin: 0;
     color: var(--gray-900);
     background: var(--white);
@@ -69,7 +74,8 @@ a {
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid var(--blue);
-    outline-offset: 3px;
+    outline-offset: 4px;
+    border-radius: 8px;
 }
 
 button {
@@ -78,6 +84,7 @@ button {
 
 .container {
     width: min(1120px, calc(100% - 48px));
+    max-width: 100%;
     margin-inline: auto;
 }
 
@@ -110,6 +117,10 @@ button {
     width: 104px;
     height: 80px;
     object-fit: contain;
+}
+
+.menu-brand {
+    display: none;
 }
 
 .nav-links {
@@ -632,7 +643,10 @@ button {
 }
 
 .back-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 4px;
     color: var(--blue);
     font-weight: 700;
     text-decoration: none;
@@ -671,6 +685,10 @@ button {
 }
 
 .footer-github {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 4px;
     color: var(--blue);
     font-size: var(--text-small);
     font-weight: 700;
@@ -745,6 +763,26 @@ button {
         background: rgba(16, 36, 55, 0.48);
     }
 
+    /* Logo da marca dentro do menu lateral */
+    .menu-brand {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        min-height: 72px;
+        margin: 0 0 12px;
+        padding: 0 4px 16px;
+        border-bottom: 1px solid var(--gray-200);
+        text-decoration: none;
+    }
+
+    .menu-brand img {
+        width: min(180px, 100%);
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
     /* Menu fechado fora da tela */
     .nav-links {
         display: flex;
@@ -757,7 +795,7 @@ button {
         width: min(82vw, 320px);
         height: 100vh;
         height: 100dvh;
-        padding: 100px 20px 24px;
+        padding: 24px 20px;
 
         flex-direction: column;
         align-items: stretch;
@@ -969,6 +1007,14 @@ button {
 
     .feature-card {
         padding: 20px;
+    }
+}
+
+/* Compatibilidade para navegadores sem suporte a overflow-x: clip */
+@supports not (overflow-x: clip) {
+    html,
+    body {
+        overflow-x: hidden;
     }
 }
 
