@@ -30,6 +30,9 @@
             <div class="menu-overlay" hidden></div>
 
             <div class="nav-links" id="nav-links">
+                <a class="menu-brand" href="home.html" aria-label="Chess Up - Início">
+                    <img src="logo-chessup.png" alt="Chess Up">
+                </a>
                 <a class="nav-link" href="home.html">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -173,14 +176,23 @@
             menuButton.setAttribute("aria-label", "Fechar menu");
             menuOverlay.hidden = false;
             document.body.classList.add("menu-open");
+
+            const firstLink = navLinks.querySelector(".nav-link");
+            if (firstLink) {
+                firstLink.focus();
+            }
         }
 
-        function closeMenu() {
+        function closeMenu(returnFocus = false) {
             navLinks.classList.remove("is-open");
             menuButton.setAttribute("aria-expanded", "false");
             menuButton.setAttribute("aria-label", "Abrir menu");
             menuOverlay.hidden = true;
             document.body.classList.remove("menu-open");
+
+            if (returnFocus) {
+                menuButton.focus();
+            }
         }
 
         menuButton.addEventListener("click", () => {
@@ -193,15 +205,31 @@
             }
         });
 
-        menuOverlay.addEventListener("click", closeMenu);
+        menuOverlay.addEventListener("click", () => closeMenu(true));
 
         navLinks.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", closeMenu);
+            link.addEventListener("click", () => {
+                const href = link.getAttribute("href") || "";
+                closeMenu();
+
+                if (href.startsWith("#")) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.setAttribute("tabindex", "-1");
+                        target.focus({ preventScroll: true });
+                    }
+                } else {
+                    menuButton.focus();
+                }
+            });
         });
 
         document.addEventListener("keydown", event => {
-            if (event.key === "Escape") {
-                closeMenu();
+            if (
+                event.key === "Escape" &&
+                menuButton.getAttribute("aria-expanded") === "true"
+            ) {
+                closeMenu(true);
             }
         });
 
