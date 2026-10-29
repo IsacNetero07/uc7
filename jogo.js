@@ -275,6 +275,7 @@
     function choosePiece(square, piece) {
         selected = square;
         legalMoves = chess.moves({ square: square, verbose: true });
+        startTimer();
         boardMessage.textContent = "Peça selecionada: " + PIECE_NAMES[piece.color][piece.type] + ". Escolha uma casa destacada.";
         updateAll();
     }
@@ -548,6 +549,7 @@
     let questionIndex = 0;
     let quizScore = 0;
     let answered = false;
+    let quizComplete = false;
     function renderQuestion() {
         const question = QUESTIONS[questionIndex];
         $("#quiz-question").textContent = question.question;
@@ -583,13 +585,26 @@
     }
     function initQuiz() {
         $("#quiz-next").addEventListener("click", function () {
-            if (!answered) return;
-            if (questionIndex === QUESTIONS.length - 1) {
-                $("#quiz-feedback").textContent = "Você concluiu os desafios: " + quizScore + " de " + QUESTIONS.length + " acertos. O quiz vai reiniciar.";
+            if (quizComplete) {
+                quizComplete = false;
                 questionIndex = 0;
                 quizScore = 0;
                 $("#quiz-score").textContent = "Acertos nesta sessão: 0";
-            } else questionIndex += 1;
+                renderQuestion();
+                return;
+            }
+            if (!answered) return;
+            if (questionIndex === QUESTIONS.length - 1) {
+                quizComplete = true;
+                $("#quiz-feedback").textContent = "Você concluiu os desafios: " + quizScore + " de " + QUESTIONS.length + " acertos.";
+                $("#quiz-next").textContent = "Jogar novamente";
+                $("#quiz-next").disabled = false;
+                $("#quiz-options").querySelectorAll("button").forEach(function (button) {
+                    button.disabled = true;
+                });
+                return;
+            }
+            questionIndex += 1;
             renderQuestion();
         });
         renderQuestion();
